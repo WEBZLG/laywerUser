@@ -100,7 +100,74 @@
 				<wuc-tab :tab-list="tabList" :tabCur.sync="TabCur" @change="tabChange"></wuc-tab>
 				<swiper :current="TabCur" duration="300" @change="swiperChange">
 					<swiper-item v-for="(item, index) in tabList" :key="index">
-						<div>{{ item.name }}</div>
+						<view class="flex msgItem">
+							<view class="minImg">
+								<image src="../../static/touxiang.png" mode=""></image>
+							</view>
+							<view class="minInfo">
+								<view class="pubTitle">北京市XXX律师事务所</view>
+								<view class="addrTitle">北京市</view>
+								<view class="flex tags">
+									<view class="tag">婚姻家庭</view>
+									<view class="tag">婚姻家庭</view>
+									<view class="tag">婚姻家庭</view>
+									<view class="tag">婚姻家庭</view>
+									<view class="tag">婚姻家庭</view>
+									<view class="tag">婚姻家庭</view>
+									<view class="tag">婚姻家庭</view>
+									<view class="tag">婚姻家庭</view>
+								</view>
+							</view>
+						</view>
+						<view class="flex msgItem">
+							<view class="minImg">
+								<image src="../../static/touxiang.png" mode=""></image>
+							</view>
+							<view class="minInfo">
+								<view class="pubTitle">北京市XXX律师事务所</view>
+								<view class="addrTitle">北京市</view>
+								<view class="flex tags">
+									<view class="tag">婚姻家庭</view>
+									<view class="tag">婚姻家庭</view>
+									<view class="tag">婚姻家庭</view>
+									<view class="tag">婚姻家庭</view>
+									<view class="tag">婚姻家庭</view>
+									<view class="tag">婚姻家庭</view>
+									<view class="tag">婚姻家庭</view>
+									<view class="tag">婚姻家庭</view>
+								</view>
+							</view>
+						</view>
+					</swiper-item>
+				</swiper>
+			</view>
+			<view class="laywer">
+				<view class="caption disFlex">
+					<view>推荐律师</view>
+					<view class="swipLeft">更多</view>
+				</view>
+				<wuc-tab :tab-list="tabList" :tabCur.sync="TabCur1" @change="tabChange1"></wuc-tab>
+				<swiper :current="TabCur1" duration="300" @change="swiperChange1">
+					<swiper-item v-for="(item, index) in tabList" :key="index">
+						<view class="flex msgItem">
+							<view class="minImg">
+								<image src="../../static/touxiang.png" mode=""></image>
+							</view>
+							<view class="minInfo">
+								<view class="pubTitle">王律师</view>
+								<view class="addrTitle">北京市</view>
+								<view class="flex tags">
+									<view class="tag">婚姻家庭</view>
+									<view class="tag">婚姻家庭</view>
+									<view class="tag">婚姻家庭</view>
+									<view class="tag">婚姻家庭</view>
+									<view class="tag">婚姻家庭</view>
+									<view class="tag">婚姻家庭</view>
+									<view class="tag">婚姻家庭</view>
+									<view class="tag">婚姻家庭</view>
+								</view>
+							</view>
+						</view>
 					</swiper-item>
 				</swiper>
 			</view>
@@ -114,7 +181,8 @@ export default {
 	data() {
 		return {
 			TabCur: 0,
-			tabList: [{ name: '精选' }, { name: '订阅' }]
+			TabCur1: 0,
+			tabList: [{ name: '精选' }, { name: '订阅' },{ name: '精选' }, { name: '订阅' },{ name: '精选' }, { name: '订阅' },{ name: '精选' }, { name: '订阅' }]
 		};
 	},
 	components: { WucTab },
@@ -127,6 +195,13 @@ export default {
 		swiperChange(e) {
 			let { current } = e.target;
 			this.TabCur = current;
+		},
+		tabChange1(index) {
+			this.TabCur1 = index;
+		},
+		swiperChange1(e) {
+			let { current } = e.target;
+			this.TabCur1 = current;
 		},
 		// 搜索
 		onNavigationBarButtonTap: function(e) {
@@ -182,4 +257,20 @@ uni-swiper {
 .consultBox {
 	margin: 50rpx 0;
 }
+.tags{
+	flex-wrap: wrap;
+}
+.msgItem{
+	align-content: center;
+	margin-bottom: 30rpx;
+}
+.laywerOffice swiper,
+.laywer swiper,
+.laywer{
+		margin-top: 30rpx;
+}
+.laywerOffice uni-swiper,
+.laywer uni-swiper{
+	height: 992rpx;
+	}
 </style>

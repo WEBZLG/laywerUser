@@ -1,5 +1,5 @@
 <template>
-	<view class="content">
+	<view class="">
 		<view class="bg">
 			<image src="../../static/denglu_bg.png"></image>
 			<view class="title">
@@ -15,7 +15,7 @@
 			</view>
 			<button type="primary" class="login">登录</button>
 		</view>
-		<view class="other disflex">
+		<view class="other">
 			<view class="line"></view>
 			<view class="second">第三方登录</view>
 			<view class="line"></view>
@@ -125,6 +125,9 @@ button[type='primary'] {
 	margin-top: 128rpx;
 }
 .other{
+	display: flex;
+	align-items: center;
+	flex-direction: row;
 	margin: 110rpx 30rpx 50rpx;
 }
 .line{

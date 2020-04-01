@@ -1,7 +1,7 @@
 {
 	"pages": [ //pages数组中第一项表示应用启动页，参考：https://uniapp.dcloud.io/collocation/pages
 		// {
-		// 	"path": "pages/index/index",
+		// 	"path": "pages/login/index",
 		// 	"style": {
 		// 		"navigationBarTitleText": "登录",
 		// 		"navigationBarBackgroundColor": "#267CFB",
@@ -27,6 +27,55 @@
 					}
 				}
 			}
+		}, {
+			"path": "pages/news/news",
+			"style": {
+				"navigationBarTitleText": "资讯",
+				"navigationBarBackgroundColor": "#ffffff",
+				"backgroundColor": "#ffffff",
+				"navigationBarTextStyle": "black",
+				"enablePullDownRefresh": true,
+				"app-plus": {
+					"pullToRefresh": {
+						"support": true,
+						"color": "#ff3333",
+						"style": "default",
+						"contentdown": {
+							"caption": "下拉可刷新自定义文本"
+						},
+						"contentover": {
+							"caption": "释放可刷新自定义文本"
+						},
+						"contentrefresh": {
+							"caption": "正在刷新自定义文本"
+						}
+					}
+				}
+			}
+		}, {
+			"path": "pages/publish/publish",
+			"style": {
+				"navigationBarTitleText": "发布",
+				"navigationBarBackgroundColor": "#ffffff",
+				"backgroundColor": "#ffffff",
+				"navigationBarTextStyle": "black"
+			}
+		}, {
+			"path": "pages/message/message",
+			"style": {
+				"navigationBarTitleText": "消息",
+				"navigationBarBackgroundColor": "#ffffff",
+				"backgroundColor": "#ffffff",
+				"navigationBarTextStyle": "black"
+			}
+		}, {
+			"path": "pages/myself/myself",
+			"style": {
+				"navigationBarTitleText": "我的",
+				"navigationBarBackgroundColor": "#267CFB",
+				"backgroundColor": "#267CFB",
+				"navigationBarTextStyle": "white"
+			}
 		}
 	],
 	"globalStyle": {
@@ -36,15 +85,35 @@
 		"backgroundColor": "#ffffff"
 	},
 	"tabBar": {
-	    "color": "#7A7E83",
-	    "selectedColor": "#3cc51f",
-	    "borderStyle": "black",
-	    "backgroundColor": "#ffffff",
-	    "list": [{
-	        "pagePath": "pages/home/home",
-	        "iconPath": "static/image/icon_component.png",
-	        "selectedIconPath": "static/image/icon_component_HL.png",
-	        "text": "组件"
-	    }]
+		"color": "#7A7E83",
+		"selectedColor": "#3cc51f",
+		"borderStyle": "black",
+		"backgroundColor": "#ffffff",
+		"list": [{
+				"pagePath": "pages/home/home",
+				"iconPath": "static/home_1.png",
+				"selectedIconPath": "static/home_2.png"
+			},
+			{
+				"pagePath": "pages/news/news",
+				"iconPath": "static/news_1.png",
+				"selectedIconPath": "static/news_2.png"
+			},
+			{
+				"pagePath": "pages/publish/publish",
+				"iconPath": "static/home1_07.png",
+				"selectedIconPath": "static/home1_07.png"
+			},
+			{
+				"pagePath": "pages/message/message",
+				"iconPath": "static/ls_message_1.png",
+				"selectedIconPath": "static/ls_message_2.png"
+			},
+			{
+				"pagePath": "pages/myself/myself",
+				"iconPath": "static/ls_my_1.png",
+				"selectedIconPath": "static/ls_my_2.png"
+			}
+		]
 	}
 }

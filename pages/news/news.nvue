@@ -1,0 +1,225 @@
+<template>
+	<view class="">
+		<view class="">
+			<view class="flex nav">
+				<view class="flex">
+					<view class="iconfont iconshouye-copy"></view>
+					回到首页
+				</view>
+				<view class="rowLine"></view>
+				<view class="flex">
+					<view class="iconfont iconbianzu"></view>
+					发布话题
+				</view>
+				<view class="rowLine"></view>
+				<view class="flex">
+					<view class="iconfont iconsousuo-copy"></view>
+					搜索
+				</view>
+				<view class="rowLine"></view>
+				<view class="flex">
+					<view class="iconfont iconmy-selection"></view>
+					我的话题
+				</view>
+			</view>
+			<wuc-tab :tab-list="tabList" :tabCur.sync="TabCur" @change="tabChange"></wuc-tab>
+		</view>
+		<view class="content">
+			<swiper :current="TabCur" duration="300" @change="swiperChange">
+				<swiper-item v-for="(item, index) in tabList" :key="index">
+					<view class="msgItem">
+						<view class="block">
+							<text class="talk">#话题#</text>
+							<text>所谓的“忠诚协议”到底签还是不签？要怎么签才好？法院判决告诉你答案！</text>
+						</view>
+						<view class="disFlex imgBox">
+							<view class="articlImg"><image src="../../static/touxiang.png" mode=""></image></view>
+							<view class="articlImg"><image src="../../static/touxiang.png" mode=""></image></view>
+							<view class="articlImg"><image src="../../static/touxiang.png" mode=""></image></view>
+						</view>
+						<view class="disFlex userinfo">
+							<view class="flex">
+								<view class="minHead"><image src="../../static/touxiang.png" mode=""></image></view>
+								<!-- <view class="userMark">用户</view> -->
+								<view class="laywerMark">律师</view>
+								<view class="userName">刘大大大大大彪</view>
+							</view>
+							<view class="flex">
+								<view class="iconfont iconzuihuo"></view>
+								<view class="hotNum">88888</view>
+							</view>
+						</view>
+					</view>
+					<view class="msgItem">
+						<view class="block">
+							<text class="talk">#话题#</text>
+							<text>所谓的“忠诚协议”到底签还是不签？要怎么签才好？法院判决告诉你答案！</text>
+						</view>
+						<view class="disFlex imgBox">
+							<view class="articlImg"><image src="../../static/touxiang.png" mode=""></image></view>
+							<view class="articlImg"><image src="../../static/touxiang.png" mode=""></image></view>
+							<view class="articlImg"><image src="../../static/touxiang.png" mode=""></image></view>
+						</view>
+						<view class="disFlex userinfo">
+							<view class="flex">
+								<view class="minHead"><image src="../../static/touxiang.png" mode=""></image></view>
+								<!-- <view class="userMark">用户</view> -->
+								<view class="laywerMark">律师</view>
+								<view class="userName">刘大大大大大彪</view>
+							</view>
+							<view class="flex">
+								<view class="iconfont iconzuihuo"></view>
+								<view class="hotNum">88888</view>
+							</view>
+						</view>
+					</view>
+					<view class="msgItem">
+						<view class="block">
+							<text class="talk">#话题#</text>
+							<text>所谓的“忠诚协议”到底签还是不签？要怎么签才好？法院判决告诉你答案！</text>
+						</view>
+						<view class="disFlex imgBox">
+							<view class="articlImg"><image src="../../static/touxiang.png" mode=""></image></view>
+							<view class="articlImg"><image src="../../static/touxiang.png" mode=""></image></view>
+							<view class="articlImg"><image src="../../static/touxiang.png" mode=""></image></view>
+						</view>
+						<view class="disFlex userinfo">
+							<view class="flex">
+								<view class="minHead"><image src="../../static/touxiang.png" mode=""></image></view>
+								<!-- <view class="userMark">用户</view> -->
+								<view class="laywerMark">律师</view>
+								<view class="userName">刘大大大大大彪</view>
+							</view>
+							<view class="flex">
+								<view class="iconfont iconzuihuo"></view>
+								<view class="hotNum">88888</view>
+							</view>
+						</view>
+					</view>
+					<uni-load-more :status="status"  :content-text="contentText" color="#007aff"  />
+				</swiper-item>
+			</swiper>
+		</view>
+	</view>
+</template>
+
+<script>
+import WucTab from '@/components/wuc-tab/wuc-tab.vue';
+import uniLoadMore from '@/components/uni-load-more/uni-load-more.vue';
+export default {
+	data() {
+		return {
+			TabCur: 0,
+			tabList: [{ name: '精选' }, { name: '订阅' }, { name: '精选' }, { name: '订阅' }, { name: '精选' }, { name: '订阅' }, { name: '精选' }, { name: '订阅' }],
+			status: 'more',
+			statusTypes: [
+				{
+					value: 'more',
+					text: '加载前'
+				},
+				{
+					value: 'loading',
+					text: '加载中'
+				},
+				{
+					value: 'noMore',
+					text: '没有更多'
+				}
+			],
+			contentText: {
+				contentdown: '查看更多',
+				contentrefresh: '加载中',
+				contentnomore: '没有更多'
+			}
+		};
+	},
+	components: { WucTab, uniLoadMore },
+	onLoad() {},
+	methods: {
+		// 横向选项卡
+		tabChange(index) {
+			this.TabCur = index;
+		},
+		swiperChange(e) {
+			let { current } = e.target;
+			this.TabCur = current;
+		},
+		// 下拉刷新
+		onPullDownRefresh() {
+			console.log('refresh');
+			setTimeout(function() {
+				uni.stopPullDownRefresh();
+			}, 1000);
+		},
+		// 上拉加载
+		onReachBottom() {
+			let _self = this;
+			this.status = 'loading';
+			uni.showNavigationBarLoading();
+			setTimeout(function() {
+				_self.status = 'more';
+				uni.hideNavigationBarLoading();
+			}, 2000);
+		}
+	},
+	computed: {}
+};
+</script>
+
+<style lang="scss">
+$color-orange: #fba222;
+$color-primary: #2e82ff;
+$color-white: #ffffff;
+@import url('@/static/iconfont/iconfont.css');
+.flex {
+	justify-content: space-evenly;
+}
+.rowLine {
+	border: 1px dashed #dcdcdc;
+	height: 28rpx;
+	margin-top: 36rpx;
+}
+.nav {
+	font-weight: bold;
+	line-height: 100rpx;
+	color: $color-primary;
+	margin: 30rpx 0;
+	height: 100rpx;
+	background-color: $color-white;
+	border-bottom: 1px solid #e1e1e1;
+}
+.wuc-tab {
+	top: -30rpx;
+	background-color: $color-white;
+}
+.content {
+	position: fixed;
+	top: 160px;
+	left: 0;
+	right: 0;
+	bottom: 50px;
+}
+uni-swiper {
+	height: 100%;
+}
+.iconbianzu {
+	font-size: 24rpx;
+	margin-right: 4rpx;
+}
+.talk {
+	color: $color-primary;
+}
+.block {
+	font-weight: bold;
+}
+.imgBox {
+	margin-top: 30rpx;
+}
+.msgItem {
+	margin-bottom: 40rpx;
+	border-bottom: 1px solid #e1e1e1;
+}
+swiper-item {
+	overflow: auto;
+}
+</style>
