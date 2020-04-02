@@ -27,76 +27,77 @@
 		<view class="content">
 			<swiper :current="TabCur" duration="300" @change="swiperChange">
 				<swiper-item v-for="(item, index) in tabList" :key="index">
-					<view class="msgItem">
-						<view class="block">
-							<text class="talk">#话题#</text>
-							<text>所谓的“忠诚协议”到底签还是不签？要怎么签才好？法院判决告诉你答案！</text>
-						</view>
-						<view class="disFlex imgBox">
-							<view class="articlImg"><image src="../../static/touxiang.png" mode=""></image></view>
-							<view class="articlImg"><image src="../../static/touxiang.png" mode=""></image></view>
-							<view class="articlImg"><image src="../../static/touxiang.png" mode=""></image></view>
-						</view>
-						<view class="disFlex userinfo">
-							<view class="flex">
-								<view class="minHead"><image src="../../static/touxiang.png" mode=""></image></view>
-								<!-- <view class="userMark">用户</view> -->
-								<view class="laywerMark">律师</view>
-								<view class="userName">刘大大大大大彪</view>
+					<mescroll-body ref="mescrollRef" @init="mescrollInit" @down="downCallback" @up="upCallback" :down="downOption" :up="upOption">
+						<view class="msgItem">
+							<view class="block">
+								<text class="talk">#话题#</text>
+								<text>所谓的“忠诚协议”到底签还是不签？要怎么签才好？法院判决告诉你答案！</text>
 							</view>
-							<view class="flex">
-								<view class="iconfont iconzuihuo"></view>
-								<view class="hotNum">88888</view>
+							<view class="disFlex imgBox">
+								<view class="articlImg"><image src="../../static/touxiang.png" mode=""></image></view>
+								<view class="articlImg"><image src="../../static/touxiang.png" mode=""></image></view>
+								<view class="articlImg"><image src="../../static/touxiang.png" mode=""></image></view>
 							</view>
-						</view>
-					</view>
-					<view class="msgItem">
-						<view class="block">
-							<text class="talk">#话题#</text>
-							<text>所谓的“忠诚协议”到底签还是不签？要怎么签才好？法院判决告诉你答案！</text>
-						</view>
-						<view class="disFlex imgBox">
-							<view class="articlImg"><image src="../../static/touxiang.png" mode=""></image></view>
-							<view class="articlImg"><image src="../../static/touxiang.png" mode=""></image></view>
-							<view class="articlImg"><image src="../../static/touxiang.png" mode=""></image></view>
-						</view>
-						<view class="disFlex userinfo">
-							<view class="flex">
-								<view class="minHead"><image src="../../static/touxiang.png" mode=""></image></view>
-								<!-- <view class="userMark">用户</view> -->
-								<view class="laywerMark">律师</view>
-								<view class="userName">刘大大大大大彪</view>
-							</view>
-							<view class="flex">
-								<view class="iconfont iconzuihuo"></view>
-								<view class="hotNum">88888</view>
+							<view class="disFlex userinfo">
+								<view class="flex">
+									<view class="minHead"><image src="../../static/touxiang.png" mode=""></image></view>
+									<!-- <view class="userMark">用户</view> -->
+									<view class="laywerMark">律师</view>
+									<view class="userName">刘大大大大大彪</view>
+								</view>
+								<view class="flex">
+									<view class="iconfont iconzuihuo"></view>
+									<view class="hotNum">88888</view>
+								</view>
 							</view>
 						</view>
-					</view>
-					<view class="msgItem">
-						<view class="block">
-							<text class="talk">#话题#</text>
-							<text>所谓的“忠诚协议”到底签还是不签？要怎么签才好？法院判决告诉你答案！</text>
-						</view>
-						<view class="disFlex imgBox">
-							<view class="articlImg"><image src="../../static/touxiang.png" mode=""></image></view>
-							<view class="articlImg"><image src="../../static/touxiang.png" mode=""></image></view>
-							<view class="articlImg"><image src="../../static/touxiang.png" mode=""></image></view>
-						</view>
-						<view class="disFlex userinfo">
-							<view class="flex">
-								<view class="minHead"><image src="../../static/touxiang.png" mode=""></image></view>
-								<!-- <view class="userMark">用户</view> -->
-								<view class="laywerMark">律师</view>
-								<view class="userName">刘大大大大大彪</view>
+						<view class="msgItem">
+							<view class="block">
+								<text class="talk">#话题#</text>
+								<text>所谓的“忠诚协议”到底签还是不签？要怎么签才好？法院判决告诉你答案！</text>
 							</view>
-							<view class="flex">
-								<view class="iconfont iconzuihuo"></view>
-								<view class="hotNum">88888</view>
+							<view class="disFlex imgBox">
+								<view class="articlImg"><image src="../../static/touxiang.png" mode=""></image></view>
+								<view class="articlImg"><image src="../../static/touxiang.png" mode=""></image></view>
+								<view class="articlImg"><image src="../../static/touxiang.png" mode=""></image></view>
+							</view>
+							<view class="disFlex userinfo">
+								<view class="flex">
+									<view class="minHead"><image src="../../static/touxiang.png" mode=""></image></view>
+									<!-- <view class="userMark">用户</view> -->
+									<view class="laywerMark">律师</view>
+									<view class="userName">刘大大大大大彪</view>
+								</view>
+								<view class="flex">
+									<view class="iconfont iconzuihuo"></view>
+									<view class="hotNum">88888</view>
+								</view>
 							</view>
 						</view>
-					</view>
-					<uni-load-more :status="status"  :content-text="contentText" color="#007aff"  />
+						<view class="msgItem">
+							<view class="block">
+								<text class="talk">#话题#</text>
+								<text>所谓的“忠诚协议”到底签还是不签？要怎么签才好？法院判决告诉你答案！</text>
+							</view>
+							<view class="disFlex imgBox">
+								<view class="articlImg"><image src="../../static/touxiang.png" mode=""></image></view>
+								<view class="articlImg"><image src="../../static/touxiang.png" mode=""></image></view>
+								<view class="articlImg"><image src="../../static/touxiang.png" mode=""></image></view>
+							</view>
+							<view class="disFlex userinfo">
+								<view class="flex">
+									<view class="minHead"><image src="../../static/touxiang.png" mode=""></image></view>
+									<!-- <view class="userMark">用户</view> -->
+									<view class="laywerMark">律师</view>
+									<view class="userName">刘大大大大大彪</view>
+								</view>
+								<view class="flex">
+									<view class="iconfont iconzuihuo"></view>
+									<view class="hotNum">88888</view>
+								</view>
+							</view>
+						</view>
+					</mescroll-body>
 				</swiper-item>
 			</swiper>
 		</view>
@@ -105,35 +106,37 @@
 
 <script>
 import WucTab from '@/components/wuc-tab/wuc-tab.vue';
-import uniLoadMore from '@/components/uni-load-more/uni-load-more.vue';
+import MescrollMixin from '@/components/mescroll-uni/mescroll-mixins.js';
 export default {
+	mixins: [MescrollMixin], // 使用mixin
 	data() {
 		return {
 			TabCur: 0,
 			tabList: [{ name: '精选' }, { name: '订阅' }, { name: '精选' }, { name: '订阅' }, { name: '精选' }, { name: '订阅' }, { name: '精选' }, { name: '订阅' }],
-			status: 'more',
-			statusTypes: [
-				{
-					value: 'more',
-					text: '加载前'
+			downOption: {
+				use: true, // 是否启用下拉刷新; 默认true
+				auto: false, // 是否在初始化完毕之后自动执行下拉刷新的回调; 默认true
+				native: false // 启用系统自带的下拉组件,默认false;仅mescroll-body生效,mescroll-uni无效
+				//(native: true, 则需在pages.json中配置"enablePullDownRefresh":true)
+			},
+			// 上拉加载的常用配置
+			upOption: {
+				use: true, // 是否启用上拉加载; 默认true
+				auto: false, // 是否在初始化完毕之后自动执行上拉加载的回调; 默认true
+				page: {
+					num: 0, // 当前页码,默认0,回调之前会加1,即callback(page)会从1开始
+					size: 10 // 每页数据的数量,默认10
 				},
-				{
-					value: 'loading',
-					text: '加载中'
-				},
-				{
-					value: 'noMore',
-					text: '没有更多'
+				noMoreSize: 5, // 配置列表的总数量要大于等于5条才显示'-- END --'的提示
+				empty: {
+					tip: '暂无相关数据'
 				}
-			],
-			contentText: {
-				contentdown: '查看更多',
-				contentrefresh: '加载中',
-				contentnomore: '没有更多'
-			}
+			},
+			// 列表数据
+			dataList: []
 		};
 	},
-	components: { WucTab, uniLoadMore },
+	components: { WucTab },
 	onLoad() {},
 	methods: {
 		// 横向选项卡
@@ -144,22 +147,21 @@ export default {
 			let { current } = e.target;
 			this.TabCur = current;
 		},
-		// 下拉刷新
-		onPullDownRefresh() {
-			console.log('refresh');
-			setTimeout(function() {
-				uni.stopPullDownRefresh();
-			}, 1000);
+		// 下拉加载
+		downCallback() {
+			console.log('xiala')
+			this.mescroll.resetUpScroll();
 		},
-		// 上拉加载
-		onReachBottom() {
-			let _self = this;
-			this.status = 'loading';
-			uni.showNavigationBarLoading();
-			setTimeout(function() {
-				_self.status = 'more';
-				uni.hideNavigationBarLoading();
-			}, 2000);
+		/*上拉加载的回调*/
+		upCallback(page) {
+			console.log('shangla')
+			let pageNum = page.num; // 页码, 默认从1开始
+			let pageSize = page.size; // 页长, 默认每页10条
+				// this.mescroll.endSuccess();
+			// this.mescroll.endByPage(); 
+			// this.$nextTick(() => {
+			// });
+			this.mescroll.endErr();
 		}
 	},
 	computed: {}
@@ -170,7 +172,7 @@ export default {
 $color-orange: #fba222;
 $color-primary: #2e82ff;
 $color-white: #ffffff;
-@import url('@/static/iconfont/iconfont.css');
+
 .flex {
 	justify-content: space-evenly;
 }

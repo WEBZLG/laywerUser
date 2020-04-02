@@ -34,22 +34,8 @@
 				"navigationBarBackgroundColor": "#ffffff",
 				"backgroundColor": "#ffffff",
 				"navigationBarTextStyle": "black",
-				"enablePullDownRefresh": true,
 				"app-plus": {
-					"pullToRefresh": {
-						"support": true,
-						"color": "#ff3333",
-						"style": "default",
-						"contentdown": {
-							"caption": "下拉可刷新自定义文本"
-						},
-						"contentover": {
-							"caption": "释放可刷新自定义文本"
-						},
-						"contentrefresh": {
-							"caption": "正在刷新自定义文本"
-						}
-					}
+					"bounce": "none" // 取消APP端iOS回弹,避免与下拉刷新冲突,以及bounce边缘1秒卡顿
 				}
 			}
 		}, {
