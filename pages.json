@@ -75,6 +75,11 @@
 		"selectedColor": "#3cc51f",
 		"borderStyle": "black",
 		"backgroundColor": "#ffffff",
+		"midButton":{
+			"width":"56px",
+			"height":"56px",
+			"iconPath":"static/add.png"
+		},
 		"list": [{
 				"pagePath": "pages/home/home",
 				"iconPath": "static/home_1.png",
@@ -84,11 +89,6 @@
 				"pagePath": "pages/news/news",
 				"iconPath": "static/news_1.png",
 				"selectedIconPath": "static/news_2.png"
-			},
-			{
-				"pagePath": "pages/publish/publish",
-				"iconPath": "static/home1_07.png",
-				"selectedIconPath": "static/home1_07.png"
 			},
 			{
 				"pagePath": "pages/message/message",

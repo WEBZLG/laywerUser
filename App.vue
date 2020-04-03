@@ -106,4 +106,23 @@ body {
 .mescroll-downwarp .downwarp-progress {
 	margin: 0 auto;
 }
+.overEllipsis{
+	display: block !important;
+	overflow: hidden !important;
+	text-overflow:ellipsis !important;
+	white-space: nowrap !important;
+}
+.dot{
+	height: 36rpx;
+	min-width: 36rpx;
+	text-align: center;
+	line-height: 36rpx;
+	color: #ffffff;
+	border-radius: 36rpx;
+	background-color: #DC4F51;
+	position: absolute !important;
+	top: 0;
+	right: 0;
+	z-index: 9;
+}
 </style>

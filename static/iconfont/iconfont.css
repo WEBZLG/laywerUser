@@ -11,6 +11,10 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
+.iconshoucangchenggong:before {
+  content: "\e613";
+}
+
 .iconlababofang:before {
   content: "\e6f7";
 }
@@ -49,10 +53,6 @@
 
 .iconlianxi:before {
   content: "\e649";
-}
-
-.iconshoucang:before {
-  content: "\e6c0";
 }
 
 .iconshanchu:before {
