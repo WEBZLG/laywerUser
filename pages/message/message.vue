@@ -29,7 +29,7 @@ export default {
 	},
 	onLoad() {
 		uni.setTabBarBadge({
-			index: 3,
+			index: 2,
 			text: '1'
 		});
 	},
@@ -41,7 +41,8 @@ export default {
 <style lang="scss">
 .container {
 	background-color: #ffffff;
-	margin-top: 30rpx;
+	position: relative;
+	top: 30rpx;
 	.flex {
 		padding: 30rpx 0;
 		margin: 0 30rpx;
@@ -70,15 +71,15 @@ export default {
 	}
 	.msgList {
 		position: fixed;
-		top: 150px;
+		top: 150rpx;
 		left: 0;
 		right: 0;
-		bottom: 50px;
+		bottom: 50rpx;
 		overflow: auto;
 		background-color: #ffffff;
-		.overEllipsis {
-			width: 90%;
-		}
+	}
+	.msgName{
+		width: 76%;
 	}
 }
 </style>

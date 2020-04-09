@@ -149,16 +149,16 @@ export default {
 		},
 		// 下拉加载
 		downCallback() {
-			console.log('xiala')
+			console.log('xiala');
 			this.mescroll.resetUpScroll();
 		},
 		/*上拉加载的回调*/
 		upCallback(page) {
-			console.log('shangla')
+			console.log('shangla');
 			let pageNum = page.num; // 页码, 默认从1开始
 			let pageSize = page.size; // 页长, 默认每页10条
-				// this.mescroll.endSuccess();
-			// this.mescroll.endByPage(); 
+			// this.mescroll.endSuccess();
+			// this.mescroll.endByPage();
 			// this.$nextTick(() => {
 			// });
 			this.mescroll.endErr();
@@ -179,7 +179,6 @@ $color-white: #ffffff;
 .rowLine {
 	border: 1px dashed #dcdcdc;
 	height: 28rpx;
-	margin-top: 36rpx;
 }
 .nav {
 	font-weight: bold;
