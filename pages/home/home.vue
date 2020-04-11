@@ -75,7 +75,7 @@
 			<view class="consult">
 				<view class="caption disFlex">
 					<view>热门咨询</view>
-					<view class="swipLeft">更多</view>
+					<view class="swipLeft" @click="moreConsult">更多</view>
 				</view>
 				<view class="consultBox">
 					<view class="consultList disFlex">
@@ -144,7 +144,7 @@
 			<view class="laywer">
 				<view class="caption disFlex">
 					<view>推荐律师</view>
-					<view class="swipLeft">更多</view>
+					<view class="swipLeft" @click="moreLawyer">更多</view>
 				</view>
 				<wuc-tab :tab-list="tabList" :tabCur.sync="TabCur1" @change="tabChange1"></wuc-tab>
 				<swiper :current="TabCur1" duration="300" @change="swiperChange1">
@@ -208,6 +208,22 @@ export default {
 			if (e.index == 0) {
 				console.log('点击扫码按钮了');
 			}
+		},
+		moreConsult(){
+			uni.navigateTo({
+				url: './moreConsult',
+				success: res => {},
+				fail: () => {},
+				complete: () => {}
+			});
+		},
+		moreLawyer(){
+			uni.navigateTo({
+				url: './moreLawyer',
+				success: res => {},
+				fail: () => {},
+				complete: () => {}
+			});
 		}
 	},
 	computed: {}

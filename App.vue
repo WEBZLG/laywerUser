@@ -20,9 +20,10 @@ image {
 	height: 100%;
 	width: 100%;
 }
-body {
+body,html {
 	font-size: 28rpx;
 	background-color: #f8f8f8;
+	height: auto;
 }
 .content {
 	margin: 30rpx;
@@ -55,7 +56,7 @@ body {
 	margin: 4rpx 0;
 }
 .tag {
-	width: 118rpx;
+	width: 112rpx;
 	height: 30rpx;
 	line-height: 30rpx;
 	border-radius: 30rpx;
